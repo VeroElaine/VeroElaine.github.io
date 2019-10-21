@@ -23,7 +23,13 @@ $(() => {
 
         event.preventDefault();
 // (while loop for while user input =nothing userinput = thor)
+
         let userInput = $('input[type="text"]').val();
+
+//remove elements that i appended
+// $("#name").remove();
+// $("#image").remove();
+// $finalImage.remove();
         // while(!userInput){
         //     userInput="thor"›
         // }
@@ -58,7 +64,7 @@ $.ajax({
          // const $comicDiv = $("<div>").addClass("comicDiv")
          for(i=0; i < data.data.results.length; i++){
 
-             var $comicDiv = $("<div>").addClass("comicDiv")
+             var $comicDiv = $("<div>").addClass("comicDiv");
              $(".carousel-images").append($comicDiv);
              $comicDiv.css("display", "none")
              $("#comics").append($(".carousel-images"))
@@ -76,7 +82,7 @@ $.ajax({
 
             // let newComic = $comicDiv
              // newComic.css("display", "block")
-             $comicDiv.css("display", "block");
+              $comicDiv.css("display", "block");
 
          })
 console.log(id);
@@ -91,7 +97,8 @@ console.log(id);
               const $crossImage = $("<img>")
               $crossImage.attr("src", data.data.results[i].thumbnail.path +  "/portrait_uncanny." + data.data.results[i].thumbnail.extension)
               $("#events").append($crossImage)
-              const $crossLink = $("<ul>");                      $("#urls").append($crossLink);
+              const $crossLink = $("<ul>");
+              $("#urls").append($crossLink);
               const $cLink = $("<a>");
               $crossLink.append($cLink);
               $cLink.attr("href", data.data.results[i].urls[0].url);
@@ -107,19 +114,29 @@ console.log(id);
     }
 )
     $("form").trigger("reset");
+    //wherever I append, clear it when click function run again
 
 })
     let currentImageIndex = 0;
-    let highestIndex = $comicDiv.children().length-1;
+    let highestIndex = $(".comicDiv").children().length-1;
+    // console.log($(".next"));
 $(".next").on("click", () => {
     //i've tried .carousel-images as well
-        $comicDiv.children().eq(currentImageIndex).css("display", "none");
+    // console.log($(".comicDiv").eq(currentImageIndex));
+    console.log($("div.comicDiv").eq(3).children());
+    // console.log($(".comicDiv").children().eq(0));
+    // console.log($(".comicDiv").children().eq(1));
+
+        $(".comicDiv").eq().children().css("display", "none");
+        $(".comicDiv").children().eq(0).css("display", "none");
         if(currentImageIndex < highestIndex) {
         currentImageIndex++;
         }else{
         currentImageIndex = 0;
         }
-        $comicDiv.children().eq(currentImageIndex).css("display", "block");
+        $(".comicDiv").eq(0).children().eq(0).css("display", "block");
+        $(".comicDiv").eq(1).children().eq(0).css("display", "block");
+        // $(".comicDiv").children().css("display", "block");
 
     })
     $(".previous").on("click", () => {
