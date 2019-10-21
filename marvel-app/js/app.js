@@ -1,21 +1,43 @@
 //console.log("hello");
 
 $(() => {
-    $("form").on("submit", (event) => {
-        event.preventDefault();
 
-        const userInput = $('input[type="text"]').val();
-            if(!userInput){
-                userInput = wasp;
-            }
+    // $.ajax({
+    //     url:"http://gateway.marvel.com/v1/public/characters?name=thor &ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
+    // }).then(
+    //     (data) => {
+    //          //console.log(data.data.results[0].name);
+    //         // let id = (data.data.results[0].id)
+    //         $("#name").html(data.data.results[0].name);
+    //         //Get character Image
+    //         const $finalImage = $("<img>");
+    //         $finalImage.attr("src", data.data.results[0].thumbnail.path +  "/portrait_uncanny." + data.data.results[0].thumbnail.extension)
+    //         $("#image").append($finalImage)
+    //         $("#description").html(data.data.results[0].description);
+    //
+    //     })
+
+
+    $("form").on("submit", (event) => {
+
+
+        event.preventDefault();
+// (while loop for while user input =nothing userinput = thor)
+        let userInput = $('input[type="text"]').val();
+        // while(!userInput){
+        //     userInput="thor"›
+        // }
+            // if(!userInput){
+            //     let userInput = "wasp";
+            // }
 
 //reminder to give credit to marvel "Data provided by Marvel. © 2014 Marvel" whenever access to data is shown
 $.ajax({
-    url:"http://gateway.marvel.com/v1/public/characters?name="+ userInput + "&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
+    url:"https://gateway.marvel.com/v1/public/characters?name="+ userInput + "&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
 }).then(
     (data) => {
          //console.log(data.data.results[0].name);
-         console.log(data);
+         console.log(data.data.results[0].urls[1].url);
          //Get comic character name
         let id = (data.data.results[0].id)
         $("#name").html(data.data.results[0].name);
@@ -26,15 +48,19 @@ $.ajax({
         //console.log(data.data.results[0].thumbnail.path + "/portrait_xlarge." + data.data.results[0].thumbnail.extension);
         //get character description
         $("#description").html(data.data.results[0].description);
+        // $("#learnMore").html(data.data.results[0].urls[0].url);
 
 $.ajax({
     url: "https://gateway.marvel.com:443/v1/public/comics?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea",
 }).then(
     (data) => {
          console.log(data);
+         // const $comicDiv = $("<div>").addClass("comicDiv")
          for(i=0; i < data.data.results.length; i++){
-             const $comicDiv = $("<div>").addClass("comicDiv")
+
+             var $comicDiv = $("<div>").addClass("comicDiv")
              $(".carousel-images").append($comicDiv);
+             $comicDiv.css("display", "none")
              $("#comics").append($(".carousel-images"))
              const $finalImage = $("<img>")
              $finalImage.attr("src", data.data.results[i].thumbnail.path +  "/portrait_uncanny." + data.data.results[i].thumbnail.extension)
@@ -44,13 +70,18 @@ $.ajax({
              const $link = $("<a>");
              $comicLink.append($link);
              $link.attr("href", data.data.results[i].urls[0].url)
-             $link.html(data.data.results[i].urls[0].url).text("More Info");    $comicDiv.append($link)
+             $link.html(data.data.results[i].urls[0].url).text("More Info");
+             $comicDiv.append($link)
             }
+
+            // let newComic = $comicDiv
+             // newComic.css("display", "block")
+             $comicDiv.css("display", "block");
 
          })
 console.log(id);
  $.ajax({
-     url:"http://gateway.marvel.com/v1/public/events?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
+     url:"https://gateway.marvel.com/v1/public/events?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
 }).then(
      (data) => {
          //console.log(data.data.results[0].name);
@@ -79,15 +110,16 @@ console.log(id);
 
 })
     let currentImageIndex = 0;
-    let highestIndex = $(".carousel-image").children().length-1;
+    let highestIndex = $comicDiv.children().length-1;
 $(".next").on("click", () => {
-        $(".carousel-images").children().eq(currentImageIndex).css("display", "none");
+    //i've tried .carousel-images as well
+        $comicDiv.children().eq(currentImageIndex).css("display", "none");
         if(currentImageIndex < highestIndex) {
         currentImageIndex++;
         }else{
         currentImageIndex = 0;
         }
-        $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
+        $comicDiv.children().eq(currentImageIndex).css("display", "block");
 
     })
     $(".previous").on("click", () => {
@@ -97,11 +129,12 @@ $(".next").on("click", () => {
         } else {
             currentImageIndex = highestIndex
         };
-        $("#comics").children().eq(currentImageIndex).css("display", "block");
+        $("comics").children().eq(currentImageIndex).css("display", "block");
 
     })
 
 })
+
 
 
 }) //closing jQuery on document load

@@ -5,12 +5,11 @@ body{
     height: auto;
     margin: 0;
     background-size: auto;
+    /* width: 160vw; */
+    width:100%;
+    /* display: inline-block; */
 
 }
-
-/* <a href="https://www.seekpng.com/ipng/u2q8a9r5t4r5q8e6_vector-library-library-gimp-darkgoddess-simple-halftones-comic/"> */
-
-/* <img src="https://www.seekpng.com/png/detail/11-116796_vector-library-library-gimp-darkgoddess-simple-halftones-comic.png"> */
 
 header {
     display: flex;
@@ -24,6 +23,7 @@ header {
     margin-bottom: 0;
     /* height: 70px; */
 }
+
 
 h1 {
     border: 200px solid red;
@@ -58,6 +58,7 @@ h5{
     border-radius: 20px;
     font-size: 15px;
 
+
 }
 
 form{
@@ -65,7 +66,7 @@ form{
     background-color: darkgray;
     line-height: 40px;
     margin-top: 0;
-    padding-left: 900px;
+    padding-left: 70%;
 
 }
 
@@ -95,21 +96,49 @@ form{
 }
 
 .box {
-    width: 48%;
-    /* border: 1px solid black; */
+    width: 49%;
+    /* border: 2px solid red; */
+
+}
+.box .newspaper{
+    margin-left: -90px;
+    margin-top: 60px;
+}
+
+/* .title{
+    display: flex;
+    justify-content: space-between;
+} */
+
+.newspaper{
+    margin-top: 40px;
+    background-color: ivory;
+    border-radius: 5% 5% 1% 1%;
+    width: 80%;
+    height: 40vh;
+    transform-origin: center;
+    animation: spin .3s 10 linear;
+    padding: 10px 30px;
+    /* max-height: 300px; */
+    overflow: scroll;
+    box-shadow: 2px 2px 4px black, -2px -2px 4px black;
 
 }
 
 #name{
-    color: white;
-    background-color: red;
+    color: #ED1D24;
+    /* background-color: ivory; */
     font-family: Marvel Regular;
     font-weight: bold;
-    font-size: 27px;
+    font-size: 25px;
     display: inline-block;
-    margin-bottom: 3px;
-    font-style: italic;
-    margin-left: 120px;
+    /* font-style: italic; */
+    margin-left: 140px;
+    align-items: center;
+    box-shadow: 2px 2px 4px black, -2px -2px 4px black;
+    margin-bottom: 30px;
+    background-color: ivory;
+
 }
 
 #description{
@@ -119,19 +148,25 @@ form{
     letter-spacing: 1px;
     padding: 0;
     line-height: 25px;
-
+    /* margin-left: -180px; */
+    /* margin-top: 150px; */
+    /* margin-right: 80px; */
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 65px;
 }
 
 dt{
-    color: red;
+    color: #ED1D24;
     font-family: Marvel;
-    font-size: 30px;
+    font-size: 33px;
     font-weight: bold;
 }
-dd #comics{
-    color: red;
 
+.comics{
+    margin-top: 60px;
 }
+
 
 a{
     display: inline-block;
@@ -153,8 +188,6 @@ footer{
     background: red;
     line-height: 100px;
 }
-
-
 
 .carousel-container{
     width: 70%;
@@ -202,4 +235,13 @@ footer{
   background: lightgray;
   box-shadow: 1px 1px #f2cd99;
   color: #ED1D24;
+}
+
+footer{
+    background: #ED1D24
+}
+p{
+    color: white;
+    margin-left: 8px
+
 }
