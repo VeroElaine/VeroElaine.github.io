@@ -1,0 +1,205 @@
+body{
+    background-image:
+    url("Imgs/Benday.png");
+    /* url("https://www.seekpng.com/png/detail/11-116796_vector-library-library-gimp-darkgoddess-simple-halftones-comic.png"); */
+    height: auto;
+    margin: 0;
+    background-size: auto;
+
+}
+
+/* <a href="https://www.seekpng.com/ipng/u2q8a9r5t4r5q8e6_vector-library-library-gimp-darkgoddess-simple-halftones-comic/"> */
+
+/* <img src="https://www.seekpng.com/png/detail/11-116796_vector-library-library-gimp-darkgoddess-simple-halftones-comic.png"> */
+
+header {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 0;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    background: #ED1D24;
+    margin-bottom: 0;
+    /* height: 70px; */
+}
+
+h1 {
+    border: 200px solid red;
+    font-family: Marvel Regular;
+    font-size: 100px;
+    letter-spacing: 2px;
+    line-height: 60px;
+    border-width: 60px;
+    padding: 0;
+}
+h4{
+    color: white;
+    font-style: italic;
+}
+
+h5{
+    margin-top: 0;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+#submit{
+    color: red;
+    font-family: Marvel Regular;
+    /* border: red; */
+    border-radius: 10px;
+    font-size: 15px;
+
+}
+
+#input{
+    border-radius: 20px;
+    font-size: 15px;
+
+}
+
+form{
+    /* background-image: url("Imgs/marvel_background.png"); */
+    background-color: darkgray;
+    line-height: 40px;
+    margin-top: 0;
+    padding-left: 900px;
+
+}
+
+.container{
+    display: flex;
+    overflow: hidden;
+    border: 1px solid gold;
+    height: auto;
+}
+.sidebar{
+    background-image: url("Imgs/Stan.png");
+    width: 26%;
+    height: 900vh;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    margin-top: 0;
+    padding-top: 0;
+    margin-right: 0;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid pink; */
+    width: 100%;
+}
+
+.box {
+    width: 48%;
+    /* border: 1px solid black; */
+
+}
+
+#name{
+    color: white;
+    background-color: red;
+    font-family: Marvel Regular;
+    font-weight: bold;
+    font-size: 27px;
+    display: inline-block;
+    margin-bottom: 3px;
+    font-style: italic;
+    margin-left: 120px;
+}
+
+#description{
+    margin-top: 100px;
+    font-family: Marvel Regular;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 0;
+    line-height: 25px;
+
+}
+
+dt{
+    color: red;
+    font-family: Marvel;
+    font-size: 30px;
+    font-weight: bold;
+}
+dd #comics{
+    color: red;
+
+}
+
+a{
+    display: inline-block;
+    justify-content: center;
+    color: white;
+    background: red;
+    font-family: Marvel Regular;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+section{
+    margin-bottom: 0;
+    overflow: hidden;
+}
+footer{
+    margin-top: 0;
+    background: red;
+    line-height: 100px;
+}
+
+
+
+.carousel-container{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel-images img:first-of-type{
+    display: block;
+}
+/* .comics{
+    margin-left: 80px;
+} */
+
+.carousel-images{
+    width: 80%;
+    background: #ED1D24;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px #f2cd99;
+    display: inline-block;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: 11px;
+    align-items: center;
+}
+
+.carousel-images img {
+  width: 100%;
+  border-radius: 10px;
+  display: none;
+}
+.carousel-button {
+  align-self: center;
+  background: #ED1D24;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 1px 1px #fa8d8e;
+}
+.carousel-button:hover {
+  cursor: pointer;
+  background: lightgray;
+  box-shadow: 1px 1px #f2cd99;
+  color: #ED1D24;
+}
