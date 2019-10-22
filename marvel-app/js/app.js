@@ -1,181 +1,159 @@
-//console.log("hello");
+//console.log("hola");
 
 $(() => {
 
-    // $.ajax({
-    //     url:"http://gateway.marvel.com/v1/public/characters?name=thor &ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
-    // }).then(
-    //     (data) => {
-    //          //console.log(data.data.results[0].name);
-    //         // let id = (data.data.results[0].id)
-    //         $("#name").html(data.data.results[0].name);
-    //         //Get character Image
-    //         const $finalImage = $("<img>");
-    //         $finalImage.attr("src", data.data.results[0].thumbnail.path +  "/portrait_uncanny." + data.data.results[0].thumbnail.extension)
-    //         $("#image").append($finalImage)
-    //         $("#description").html(data.data.results[0].description);
-    //
-    //     })
-    // let $userInput = $('input[type="text"]').val();
-    //     if($('input[type="text"]').val("")){
-    //         let $userInput = "thor"
-    //     }
+    const ajaxCharacter=() => {
+
+   $.ajax({
+       url:"https://gateway.marvel.com/v1/public/characters?name="+ $userInput + "&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
+   }).then(
+       (data) => {
+            //console.log(data.data.results[0].name);
+            // console.log(data.data.results[0].urls[1].url);
+            //Get comic character name
+           let id = (data.data.results[0].id)
+           $("#name").html(data.data.results[0].name);
+           //Get character Image
+           const $finalImage = $("<img>");
+           $finalImage.attr("src", data.data.results[0].thumbnail.path +  "/portrait_uncanny." + data.data.results[0].thumbnail.extension)
+           $("#image").append($finalImage)
+           //console.log(data.data.results[0].thumbnail.path + "/portrait_xlarge." + data.data.results[0].thumbnail.extension);
+           //get character description
+           $("#description").html(data.data.results[0].description);
+           // $("#learnMore").html(data.data.results[0].urls[0].url);
+
+  $.ajax({
+      url: "https://gateway.marvel.com:443/v1/public/comics?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea",
+  }).then(
+      (data) => {
+          // console.log(data);
+            // const $comicDiv = $("<div>").addClass("comicDiv")
+            for(i=0; i < data.data.results.length; i++){
+
+                const $comicDiv = $("<div>").addClass("comicDiv").attr("id", "div" + i);
+                $(".carousel-images").append($comicDiv);
+                $comicDiv.css("display", "none")
+                $("#comics").append($(".carousel-images"))
+                const $finalImage = $("<img>")
+                $finalImage.attr("src", data.data.results[i].thumbnail.path +  "/portrait_uncanny." + data.data.results[i].thumbnail.extension)
+                $comicDiv.append($finalImage)
+                const $comicLink = $("<ul>");
+                $("#urls").append($comicLink);
+                const $link = $("<a>");
+                $comicLink.append($link);
+                $link.attr("href", data.data.results[i].urls[0].url)
+                $link.html(data.data.results[i].urls[0].url).text("More Info");
+                $comicDiv.append($link)
+               }
 
 
+                 $(".comicDiv").eq(0).css("display", "block");
+                 $(".comicDiv").eq(1).css("display", "block");
+                 $(".comicDiv").eq(2).css("display", "block");
+
+                 currentImageIndex = 0;
+                 // console.log(currentImageIndex);
+                 highestIndex = $(".comicDiv").length-1;
+                // console.log(highestIndex);
+
+            })
+   console.log(id);
+    $.ajax({
+        url:"https://gateway.marvel.com/v1/public/events?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
+   }).then(
+        (data) => {
+            //console.log(data.data.results[0].name);
+             // console.log(data);
+             //Get comic character name
+             for(i=0; i < data.data.results.length; i++){
+                 const $crossImage = $("<img>")
+                 $crossImage.attr("src", data.data.results[i].thumbnail.path +  "/portrait_uncanny." + data.data.results[i].thumbnail.extension)
+                 $("#events").append($crossImage)
+                 const $crossLink = $("<ul>");
+                 $("#urls").append($crossLink);
+                 const $cLink = $("<a>");
+                 $crossLink.append($cLink);
+                 $cLink.attr("href", data.data.results[i].urls[0].url);
+                 $cLink.html(data.data.results[i].urls[0].url).text("More Info");
+                 $("#events").append($cLink)
+                 }
+                 $("h5").remove()
+
+        },
+
+       (error) => {
+           console.log(error);
+       }
+   )
+
+       $("form").trigger("reset");
+
+   })
+   }
+   let $userInput = "thor";
+   $userInputStart = $userInput
+
+   ajaxCharacter();
     $("form").on("submit", (event) => {
 
-
         event.preventDefault();
+
+
+        $("#image").empty();
+        $(".comicDiv").empty();
+        $("#cross-overs").empty();
+
         let $userInput = $('input[type="text"]').val();
-            if($('input[type="text"]').val("")){
-                let $userInput = "thor"
-            }
-// (while loop for while user input =nothing userinput = thor)
-// $("#name").empty();
- $("#image").empty();
- $(".comicDiv").empty();
- $("#cross-overs").empty();
-// $finalImage.empty();
 
-        // let $userInput = $('input[type="text"]').val();
-        //     if($('input[type="text"]').val("")){
-        //         let $userInput = "thor"
-        //     }
+        ajaxCharacter();
 
-
-//remove elements that i appended
-
-        // while(!userInput){
-        //     userInput="thor"›
-        // }
-            // if(!userInput){
-            //     let userInput = "wasp";
-            // }
-
-//reminder to give credit to marvel "Data provided by Marvel. © 2014 Marvel" whenever access to data is shown
-// const ajaxCharacter=() => {
-
-
-$.ajax({
-    url:"https://gateway.marvel.com/v1/public/characters?name="+ $userInput + "&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
-}).then(
-    (data) => {
-         //console.log(data.data.results[0].name);
-         console.log(data.data.results[0].urls[1].url);
-         //Get comic character name
-        let id = (data.data.results[0].id)
-        $("#name").html(data.data.results[0].name);
-        //Get character Image
-        const $finalImage = $("<img>");
-        $finalImage.attr("src", data.data.results[0].thumbnail.path +  "/portrait_uncanny." + data.data.results[0].thumbnail.extension)
-        $("#image").append($finalImage)
-        //console.log(data.data.results[0].thumbnail.path + "/portrait_xlarge." + data.data.results[0].thumbnail.extension);
-        //get character description
-        $("#description").html(data.data.results[0].description);
-        // $("#learnMore").html(data.data.results[0].urls[0].url);
-
-$.ajax({
-    url: "https://gateway.marvel.com:443/v1/public/comics?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea",
-}).then(
-    (data) => {
-         console.log(data);
-         // const $comicDiv = $("<div>").addClass("comicDiv")
-         for(i=0; i < data.data.results.length; i++){
-
-             var $comicDiv = $("<div>").addClass("comicDiv").attr("id", "div" + i);
-             $(".carousel-images").append($comicDiv);
-             $comicDiv.css("display", "none")
-             $("#comics").append($(".carousel-images"))
-             const $finalImage = $("<img>")
-             $finalImage.attr("src", data.data.results[i].thumbnail.path +  "/portrait_uncanny." + data.data.results[i].thumbnail.extension)
-             $comicDiv.append($finalImage)
-             const $comicLink = $("<ul>");
-             $("#urls").append($comicLink);
-             const $link = $("<a>");
-             $comicLink.append($link);
-             $link.attr("href", data.data.results[i].urls[0].url)
-             $link.html(data.data.results[i].urls[0].url).text("More Info");
-             $comicDiv.append($link)
-            }
-
-            // let newComic = $comicDiv
-             // newComic.css("display", "block")
-              $comicDiv.css("display", "block");
-
-         })
-console.log(id);
- $.ajax({
-     url:"https://gateway.marvel.com/v1/public/events?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
-}).then(
-     (data) => {
-         //console.log(data.data.results[0].name);
-          console.log(data);
-          //Get comic character name
-          for(i=0; i < data.data.results.length; i++){
-              const $crossImage = $("<img>")
-              $crossImage.attr("src", data.data.results[i].thumbnail.path +  "/portrait_uncanny." + data.data.results[i].thumbnail.extension)
-              $("#events").append($crossImage)
-              const $crossLink = $("<ul>");
-              $("#urls").append($crossLink);
-              const $cLink = $("<a>");
-              $crossLink.append($cLink);
-              $cLink.attr("href", data.data.results[i].urls[0].url);
-              $cLink.html(data.data.results[i].urls[0].url).text("More Info");
-              $("#events").append($cLink)
-              }
-              $("h5").remove()
-
-     },
-
-    (error) => {
-        console.log(error);
-    }
-)
-
-    $("form").trigger("reset");
-    //wherever I append, clear it when click function run again
+    console.log($userInput);
 
 })
-// }
 
-
-
-
-    let currentImageIndex = 0;
-    let highestIndex = $(".carousel-images").children().length-1;
-    // console.log($(".next"));
-$(".next").on("click", () => {
-    //i've tried .carousel-images as well
-    // console.log($(".comicDiv").eq(currentImageIndex));
+    // let currentImageIndex = 0;
     // console.log($(".comicDiv"));
-    // console.log($(".comicDiv").children().eq(0));
-    // console.log($(".comicDiv").children().eq(1));
-    console.log($(".comicDiv").children(currentImageIndex).eq(1));
-        $(".comicDiv").children().eq(currentImageIndex).css("display", "none");
+    // let highestIndex = $(".comicDiv").length-1;
+    // console.log($(".next"));
+
+$(".next").on("click", () => {
+
+
+        $(".comicDiv").eq(currentImageIndex).css("display", "none");
         // $(".comicDiv").children().eq(0).css("display", "none");
         if(currentImageIndex < highestIndex) {
         currentImageIndex++;
         }else{
         currentImageIndex = 0;
         }
-        $(".comicDiv").children(currentImageIndex).eq(1).css("display", "block");
-        // $(".comicDiv").eq(1).children().eq(0).css("display", "block");
-        // $(".comicDiv").children().css("display", "block");
-        console.log($(".comicDiv").children(currentImageIndex).eq(1));
+        $(".comicDiv").eq(currentImageIndex).css("display", "block");
+        $(".comicDiv").eq(currentImageIndex + 1).css("display", "block");
+        $(".comicDiv").eq(currentImageIndex + 2).css("display", "block");
 
+        // console.log(currentImageIndex);
+        // console.log(highestIndex);
     })
     $(".previous").on("click", () => {
-        $("#comics").children().eq(currentImageIndex).css("display", "none");
+
+        $(".comicDiv").eq(currentImageIndex).css("display", "none");
+        $(".comicDiv").eq(currentImageIndex+1).css("display", "none");
+        $(".comicDiv").eq(currentImageIndex+2).css("display", "none");
+
         if(currentImageIndex > 0){
             currentImageIndex --;
         } else {
             currentImageIndex = highestIndex
         };
-        $("comics").children().eq(currentImageIndex).css("display", "block");
+
+        $(".comicDiv").eq(currentImageIndex-1).css("display", "block");
+        $(".comicDiv").eq(currentImageIndex).css("display", "block");
+        $(".comicDiv").eq(currentImageIndex+1).css("display", "block");
+        // console.log(currentImageIndex);
+        // console.log(highestIndex);
 
     })
 
-})
+
 
 
 
@@ -257,5 +235,9 @@ $(".next").on("click", () => {
     // $eLink.attr("href", data.data.results[0].events.items[i].resourceURI)
     // $eLink.html(data.data.results[0].events.items[i].resourceURI).text("More Info")
     // $("#movies").append($eLink)
+    // let $userInput = $('input[type="text"]').val();
+        // if($('input[type="text"]').val("")){
+        //     let $userInput = "thor"
+        // }
 
 // }

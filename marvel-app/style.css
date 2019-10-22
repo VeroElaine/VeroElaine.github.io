@@ -210,7 +210,7 @@ footer{
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 2px 2px #f2cd99;
-    display: inline-block;
+    display: flex;
     flex-direction: row;
     margin-top: 40px;
     margin-left: 11px;
