@@ -79,16 +79,7 @@ form{
     border: 1px solid gold;
     height: auto;
 }
-.sidebar{
-    background-image: url("Imgs/Stan.png");
-    width: 26%;
-    height: 900vh;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    margin-top: 0;
-    padding-top: 0;
-    margin-right: 0;
-}
+
 .row{
     display: flex;
     flex-direction: row;
@@ -99,18 +90,27 @@ form{
 }
 
 .box {
-    width: 49%;
+    width: 32%;
+
+}
+.sidebar{
+    /* background-image: url("Imgs/Stan.png"); */
+    /* width: 16%; */
+    /* flex-direction: column; */
+     /* background-repeat: no-repeat; */
+    /* flex-direction: column; */
+    /* margin-top: 0;
+    padding-top: 0; */
+    /* margin-right: 18px; */
+    /* margin-top: 0px; */
+    /* width: 10%; */
+    /* height: 600vh; */
 
 }
 .box .newspaper{
-    margin-left: -90px;
-    margin-top: 130px;
+    margin-left: -40%;
+    margin-top: 150px;
 }
-
-/* .title{
-    display: flex;
-    justify-content: space-between;
-} */
 
 .newspaper{
     margin-top: 40px;
@@ -156,8 +156,6 @@ form{
     font-weight: bold;
     margin-left: 5px;
 
-
-
 }
 #comics, #events{
     margin-left: 0;
@@ -178,25 +176,20 @@ dt{
     width: 100%;
 }
 
-/* .cross-overs{
-    margin-top: 60px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-
-} */
-
-
 a{
     display: inline-block;
     justify-content: center;
     align-items: center;
-    color: white;
-    background: red;
+    color: red;
+    background: ivory;
     font-family: Marvel Regular;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
+    border-radius: 5% 5% 1% 1%;
+    margin-top: 10%;
+    /* margin-left: 55px; */
+    margin-left: 28%;
 }
 
 section{

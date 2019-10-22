@@ -116,8 +116,8 @@ $(() => {
         $userInput = $('input[type="text"]').val();
         $("#image").empty();
         $(".carousel-images").empty();
-        $("#cross-overs").empty();
-        $("#events").empty();
+        // $("#cross-overs").empty();
+        $(".events-images").empty();
 
         ajaxCharacter();
 
@@ -159,7 +159,7 @@ $(".next").on("click", () => {
             currentImageIndex = highestIndex
         };
 
-        $(".comicDiv").eq(currentImageIndex-1).css("display", "block");
+        $(".comicDiv").eq(currentImageIndex -1).css("display", "block");
         $(".comicDiv").eq(currentImageIndex).css("display", "block");
         $(".comicDiv").eq(currentImageIndex+1).css("display", "block");
         // console.log(currentImageIndex);
@@ -212,6 +212,7 @@ $(".next").on("click", () => {
 
 
 }) //closing jQuery on document load
+
 
 
 
