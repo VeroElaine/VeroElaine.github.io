@@ -62,8 +62,6 @@ h6{
 #input{
     border-radius: 20px;
     font-size: 15px;
-
-
 }
 
 form{
@@ -102,12 +100,11 @@ form{
 
 .box {
     width: 49%;
-    /* border: 2px solid red; */
 
 }
 .box .newspaper{
     margin-left: -90px;
-    margin-top: 60px;
+    margin-top: 130px;
 }
 
 /* .title{
@@ -147,7 +144,7 @@ form{
 }
 
 #description{
-    margin-top: 100px;
+    margin-top: 40px;
     font-family: Marvel Regular;
     font-size: 15px;
     letter-spacing: 1px;
@@ -158,11 +155,14 @@ form{
     /* margin-right: 80px; */
     font-weight: bold;
     margin-left: 5px;
-    margin-top: 65px;
+
+
+
 }
-#comics{
+#comics, #events{
     margin-left: 0;
 }
+
 
 dt{
     color: #ED1D24;
@@ -171,13 +171,11 @@ dt{
     font-weight: bold;
 }
 
-.comics{
+.comics, .cross-overs{
     margin-top: 60px;
     display: inline-block;
     flex-direction: row;
     width: 100%;
-
-
 }
 
 /* .cross-overs{
@@ -192,6 +190,7 @@ dt{
 a{
     display: inline-block;
     justify-content: center;
+    align-items: center;
     color: white;
     background: red;
     font-family: Marvel Regular;
@@ -219,6 +218,9 @@ footer{
 .carousel-images img:first-of-type{
     display: block;
 }
+.events-images img:first-of-type{
+    display: block;
+}
 .comicDiv{
     /* display: flex;
     justify-content: space-between; */
@@ -226,13 +228,31 @@ footer{
     /* width: 100% */
 }
 
+.crossDiv{
+    padding: 20px;
+}
+
 .carousel-images{
     width: 98%;
-    background: #ED1D24;
+    background: rgba(0,0,0,.05);
     padding: 10px;
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 2px 2px #f2cd99;
+    box-shadow: 2px 2px #ED1D24;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: 11px;
+    align-items: center;
+
+}
+.events-images{
+    width: 98%;
+    background: rgba(237,29,36,.15);
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px black;
     display: flex;
     flex-direction: row;
     margin-top: 40px;
@@ -242,6 +262,12 @@ footer{
 }
 
 .carousel-images img {
+  width: 100%;
+  border-radius: 10px;
+  display: none;
+}
+
+.events-images img {
   width: 100%;
   border-radius: 10px;
   display: none;

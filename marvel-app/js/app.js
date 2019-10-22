@@ -67,26 +67,31 @@ $(() => {
              // console.log(data);
              //Get comic character name
              for(i=0; i < data.data.results.length; i++){
+                 const $crossDiv = $("<div>").addClass("crossDiv").attr("id", "div" + i);
+                 $(".events-images").append($crossDiv);
+                 $crossDiv.css("display", "none")
+                 $("#events").append($(".events-images"))
                  const $crossImage = $("<img>")
                  $crossImage.attr("src", data.data.results[i].thumbnail.path +  "/portrait_uncanny." + data.data.results[i].thumbnail.extension)
-                 $("#events").append($crossImage)
+                 $crossDiv.append($crossImage)
                  const $crossLink = $("<ul>");
                  $("#urls").append($crossLink);
                  const $cLink = $("<a>");
                  $crossLink.append($cLink);
                  $cLink.attr("href", data.data.results[i].urls[0].url);
                  $cLink.html(data.data.results[i].urls[0].url).text("More Info");
-                 $("#events").append($cLink)
+                 $crossDiv.append($cLink)
                  }
                  $("h5").remove()
 
-                 // $("#events").eq(0).css("display", "block");
-                 // $("#events").eq(1).css("display", "block");
-                 // $("#events").eq(2).css("display", "block");
-                 //
-                 // currentImageIndex = 0;
-                 // // console.log(currentImageIndex);
-                 // highestIndex = $("#evetns").length-1;
+
+                 $(".crossDiv").eq(0).css("display", "block");
+                 $(".crossDiv").eq(1).css("display", "block");
+                 $(".crossDiv").eq(2).css("display", "block");
+
+                 currentEventIndex = 0;
+                 // console.log(currentImageIndex);
+                 highestEventIndex = $(".crossDiv").length-1;
 
         },
 
@@ -161,7 +166,47 @@ $(".next").on("click", () => {
         // console.log(highestIndex);
 
     })
+    let currentEventIndex = 0;
+    console.log($(".crossDiv"));
+    let highestEventIndex = $(".crossDiv").length-1;
+    console.log($(".eventsnext"));
 
+    $(".eventsNext").on("click", () => {
+
+
+            $(".crossDiv").eq(currentEventIndex).css("display", "none");
+            // $(".comicDiv").children().eq(0).css("display", "none");
+            if(currentEventIndex < highestEventIndex) {
+            currentEventIndex++;
+            }else{
+            currentEventIndex = 0;
+            }
+            $(".crossDiv").eq(currentEventIndex).css("display", "block");
+            $(".crossDiv").eq(currentEventIndex + 1).css("display", "block");
+            $(".crossDiv").eq(currentEventIndex + 2).css("display", "block");
+
+            // console.log(currentImageIndex);
+            // console.log(highestIndex);
+        })
+        $(".eventsPrevious").on("click", () => {
+
+            $(".crossDiv").eq(currentEventIndex).css("display", "none");
+            $(".crossDiv").eq(currentEventIndex+1).css("display", "none");
+            $(".crossDiv").eq(currentEventIndex+2).css("display", "none");
+
+            if(currentImageIndex > 0){
+                currentEventIndex --;
+            } else {
+                currentEventIndex = highestEventIndex
+            };
+
+            $(".crossDiv").eq(currentEventIndex-1).css("display", "block");
+            $(".crossDiv").eq(currentEventIndex).css("display", "block");
+            $(".crossDiv").eq(currentEventIndex+1).css("display", "block");
+            // console.log(currentImageIndex);
+            // console.log(highestIndex);
+
+        })
 
 
 
