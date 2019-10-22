@@ -16,20 +16,35 @@ $(() => {
     //         $("#description").html(data.data.results[0].description);
     //
     //     })
+    // let $userInput = $('input[type="text"]').val();
+    //     if($('input[type="text"]').val("")){
+    //         let $userInput = "thor"
+    //     }
 
 
     $("form").on("submit", (event) => {
 
 
         event.preventDefault();
+        let $userInput = $('input[type="text"]').val();
+            if($('input[type="text"]').val("")){
+                let $userInput = "thor"
+            }
 // (while loop for while user input =nothing userinput = thor)
+// $("#name").empty();
+ $("#image").empty();
+ $(".comicDiv").empty();
+ $("#cross-overs").empty();
+// $finalImage.empty();
 
-        let userInput = $('input[type="text"]').val();
+        // let $userInput = $('input[type="text"]').val();
+        //     if($('input[type="text"]').val("")){
+        //         let $userInput = "thor"
+        //     }
+
 
 //remove elements that i appended
-// $("#name").remove();
-// $("#image").remove();
-// $finalImage.remove();
+
         // while(!userInput){
         //     userInput="thor"›
         // }
@@ -38,8 +53,11 @@ $(() => {
             // }
 
 //reminder to give credit to marvel "Data provided by Marvel. © 2014 Marvel" whenever access to data is shown
+// const ajaxCharacter=() => {
+
+
 $.ajax({
-    url:"https://gateway.marvel.com/v1/public/characters?name="+ userInput + "&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
+    url:"https://gateway.marvel.com/v1/public/characters?name="+ $userInput + "&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
 }).then(
     (data) => {
          //console.log(data.data.results[0].name);
@@ -64,7 +82,7 @@ $.ajax({
          // const $comicDiv = $("<div>").addClass("comicDiv")
          for(i=0; i < data.data.results.length; i++){
 
-             var $comicDiv = $("<div>").addClass("comicDiv");
+             var $comicDiv = $("<div>").addClass("comicDiv").attr("id", "div" + i);
              $(".carousel-images").append($comicDiv);
              $comicDiv.css("display", "none")
              $("#comics").append($(".carousel-images"))
@@ -113,30 +131,37 @@ console.log(id);
         console.log(error);
     }
 )
+
     $("form").trigger("reset");
     //wherever I append, clear it when click function run again
 
 })
+// }
+
+
+
+
     let currentImageIndex = 0;
-    let highestIndex = $(".comicDiv").children().length-1;
+    let highestIndex = $(".carousel-images").children().length-1;
     // console.log($(".next"));
 $(".next").on("click", () => {
     //i've tried .carousel-images as well
     // console.log($(".comicDiv").eq(currentImageIndex));
-    console.log($("div.comicDiv").eq(3).children());
+    // console.log($(".comicDiv"));
     // console.log($(".comicDiv").children().eq(0));
     // console.log($(".comicDiv").children().eq(1));
-
-        $(".comicDiv").eq().children().css("display", "none");
-        $(".comicDiv").children().eq(0).css("display", "none");
+    console.log($(".comicDiv").children(currentImageIndex).eq(1));
+        $(".comicDiv").children().eq(currentImageIndex).css("display", "none");
+        // $(".comicDiv").children().eq(0).css("display", "none");
         if(currentImageIndex < highestIndex) {
         currentImageIndex++;
         }else{
         currentImageIndex = 0;
         }
-        $(".comicDiv").eq(0).children().eq(0).css("display", "block");
-        $(".comicDiv").eq(1).children().eq(0).css("display", "block");
+        $(".comicDiv").children(currentImageIndex).eq(1).css("display", "block");
+        // $(".comicDiv").eq(1).children().eq(0).css("display", "block");
         // $(".comicDiv").children().css("display", "block");
+        console.log($(".comicDiv").children(currentImageIndex).eq(1));
 
     })
     $(".previous").on("click", () => {
