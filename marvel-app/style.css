@@ -1,14 +1,10 @@
 body{
     background-image:
     url("Imgs/Benday.png");
-    /* url("https://www.seekpng.com/png/detail/11-116796_vector-library-library-gimp-darkgoddess-simple-halftones-comic.png"); */
     height: auto;
     margin: 0;
     background-size: auto;
-    /* width: 160vw; */
     width:100%;
-    /* display: inline-block; */
-
 }
 
 header {
@@ -24,11 +20,11 @@ header {
     /* height: 70px; */
 }
 
-section{
+/* section{
     margin-bottom: 0;
     overflow: hidden;
     padding-bottom: 0;
-}
+} */
 
 
 h1 {
@@ -41,6 +37,12 @@ h1 {
     padding: 0;
 }
 
+h2{
+    padding-left: 40px;
+    color: white;
+    font-family: Marvel Regular;
+    font-style: italic;
+}
 h4{
     color: white;
     font-style: italic;
@@ -57,7 +59,6 @@ h6{
 }
 
 form{
-    /* background-image: url("Imgs/marvel_background.png"); */
     background-color: darkgray;
     line-height: 40px;
     margin-top: 0;
@@ -129,25 +130,6 @@ form{
     /* padding-right: 10%; */
     color: white;
 }
-.box .newspaper{
-    margin-left: -40%;
-    margin-top: 150px;
-}
-
-.newspaper{
-    margin-top: 40px;
-    background-color: ivory;
-    border-radius: 5% 5% 1% 1%;
-    width: 80%;
-    height: 40vh;
-    transform-origin: center;
-    animation: spin .3s 10 linear;
-    padding: 10px 30px;
-    /* max-height: 300px; */
-    overflow: scroll;
-    box-shadow: 2px 2px 4px black, -2px -2px 4px black;
-
-}
 
 #name{
     color: #ED1D24;
@@ -166,16 +148,13 @@ form{
 }
 
 #description{
-    margin-top: 40px;
+    margin-top: 10%;
     font-family: Marvel Regular;
     font-size: 15px;
     letter-spacing: 1px;
     padding: 0;
     line-height: 25px;
     flex-wrap: wrap;
-    /* margin-left: -180px; */
-    /* margin-top: 150px; */
-    /* margin-right: 80px; */
     font-weight: bold;
     margin-left: 5px;
 
@@ -192,12 +171,6 @@ dt{
     font-weight: bold;
 }
 
-.comics, .cross-overs{
-    margin-top: 60px;
-    display: inline-block;
-    flex-direction: row;
-    width: 100%;
-}
 
 a{
     display: inline-block;
@@ -218,12 +191,16 @@ a:hover{
     background: #ED1D24;
     color: white;
 }
+.comics, .cross-overs{
+    margin-top: 60px;
+    display: inline-block;
+    flex-direction: row;
+    width: 100%;
+}
 .carousel-container{
     width: 98%;
     display: flex;
     justify-content: space-around;
-    /* margin-left: 60px; */
-
 }
 
 .carousel-images img:first-of-type{
@@ -232,14 +209,7 @@ a:hover{
 .events-images img:first-of-type{
     display: block;
 }
-.comicDiv{
-    /* display: flex;
-    justify-content: space-between; */
-    padding: 20px;
-    /* width: 100% */
-}
-
-.crossDiv{
+.comicDiv, .crossDiv{
     padding: 20px;
 }
 
@@ -301,35 +271,40 @@ a:hover{
 }
 
 footer{
-    margin-top: -1.6%;
-    line-height: 100px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    line-height: 20%;
     background: #ED1D24;
     padding-top: 0;
 }
 p{
     color: white;
+    font-family: cursive;
     /* margin-left: 8px; */
     display: flex;
     flex-direction: row;
+    font-size: 16px;
 }
 .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 70px;
+    margin-left: 20%;
     margin-top: 30px;
     width: 100%;
     color: white
 }
 .icons h5{
-    margin-left: 0;
+    margin-left: 3px;;
 }
 
 .icons {
     color:  white;
     display: flex;
     flex-direction: row;
-    padding-left: 40%;
+    padding-left: 50%;
+
 }
 
 .icons a{
@@ -339,4 +314,37 @@ p{
 .icons a:hover{
     background-color: #ED1D24;
     color: white;
+}
+#pow{
+    margin-top: 25px;
+}
+.title h4{
+    color: black;
+}
+.newspaper{
+    margin-top: 40px;
+    background-color: ivory;
+    border-radius: 5% 5% 1% 1%;
+    width: 90%;
+    height: 40%;
+    transform-origin: center;
+    animation: spin .3s 10 linear;
+    padding: 10px 30px;
+    overflow: scroll;
+    box-shadow: 2px 2px 4px black, -2px -2px 4px black;
+
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+
+}
+.box .newspaper{
+    margin-left: -50%;
+
+    margin-top: 38%;
+}
+@keyframes spin {
+        0% {transform: scale(.05);}
+        100% {transform: scale(1) rotate(720deg)}
+
 }

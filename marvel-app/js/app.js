@@ -111,8 +111,6 @@ $(() => {
 
         event.preventDefault();
 
-
-
         $userInput = $('input[type="text"]').val();
         $("#image").empty();
         $(".carousel-images").empty();
@@ -121,7 +119,7 @@ $(() => {
 
         ajaxCharacter();
 
-    console.log($userInput);
+    //console.log($userInput);
 
 })
 
