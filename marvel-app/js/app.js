@@ -11,7 +11,7 @@ $(() => {
             //console.log(data.data.results[0].name);
             // console.log(data.data.results[0].urls[1].url);
             //Get comic character name
-           let id = (data.data.results[0].id)
+            id = (data.data.results[0].id)
            $("#name").html(data.data.results[0].name);
            //Get character Image
            const $finalImage = $("<img>");
@@ -45,6 +45,7 @@ $(() => {
                 $link.html(data.data.results[i].urls[0].url).text("More Info");
                 $comicDiv.append($link)
                }
+               $("h6").remove()
 
 
                  $(".comicDiv").eq(0).css("display", "block");
@@ -79,6 +80,14 @@ $(() => {
                  }
                  $("h5").remove()
 
+                 // $("#events").eq(0).css("display", "block");
+                 // $("#events").eq(1).css("display", "block");
+                 // $("#events").eq(2).css("display", "block");
+                 //
+                 // currentImageIndex = 0;
+                 // // console.log(currentImageIndex);
+                 // highestIndex = $("#evetns").length-1;
+
         },
 
        (error) => {
@@ -91,7 +100,6 @@ $(() => {
    })
    }
    let $userInput = "thor";
-   $userInputStart = $userInput
 
    ajaxCharacter();
     $("form").on("submit", (event) => {
@@ -99,11 +107,12 @@ $(() => {
         event.preventDefault();
 
 
-        $("#image").empty();
-        $(".comicDiv").empty();
-        $("#cross-overs").empty();
 
-        let $userInput = $('input[type="text"]').val();
+        $userInput = $('input[type="text"]').val();
+        $("#image").empty();
+        $(".carousel-images").empty();
+        $("#cross-overs").empty();
+        $("#events").empty();
 
         ajaxCharacter();
 
@@ -111,10 +120,10 @@ $(() => {
 
 })
 
-    // let currentImageIndex = 0;
-    // console.log($(".comicDiv"));
-    // let highestIndex = $(".comicDiv").length-1;
-    // console.log($(".next"));
+    let currentImageIndex = 0;
+    console.log($(".comicDiv"));
+    let highestIndex = $(".comicDiv").length-1;
+    console.log($(".next"));
 
 $(".next").on("click", () => {
 

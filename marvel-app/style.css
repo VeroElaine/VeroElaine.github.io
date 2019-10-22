@@ -45,6 +45,10 @@ h5{
     padding-left: 10px;
     font-style: italic;
 }
+h6{
+    font-size: 13px;
+    font-style: italic;
+}
 
 #submit{
     color: red;
@@ -156,6 +160,9 @@ form{
     margin-left: 5px;
     margin-top: 65px;
 }
+#comics{
+    margin-left: 0;
+}
 
 dt{
     color: #ED1D24;
@@ -166,7 +173,20 @@ dt{
 
 .comics{
     margin-top: 60px;
+    display: inline-block;
+    flex-direction: row;
+    width: 100%;
+
+
 }
+
+/* .cross-overs{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+} */
 
 
 a{
@@ -191,7 +211,7 @@ footer{
 }
 
 .carousel-container{
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
 }
@@ -199,12 +219,15 @@ footer{
 .carousel-images img:first-of-type{
     display: block;
 }
-/* .comics{
-    margin-left: 80px;
-} */
+.comicDiv{
+    /* display: flex;
+    justify-content: space-between; */
+    padding: 20px;
+    /* width: 100% */
+}
 
 .carousel-images{
-    width: 80%;
+    width: 98%;
     background: #ED1D24;
     padding: 10px;
     border-radius: 10px;
@@ -215,6 +238,7 @@ footer{
     margin-top: 40px;
     margin-left: 11px;
     align-items: center;
+
 }
 
 .carousel-images img {
@@ -231,6 +255,7 @@ footer{
   text-align: center;
   box-shadow: 1px 1px #fa8d8e;
 }
+
 .carousel-button:hover {
   cursor: pointer;
   background: lightgray;
