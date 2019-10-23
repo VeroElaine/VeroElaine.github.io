@@ -415,7 +415,7 @@ ion-icon {
 }
 
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
     .row{
         display: flex;
         flex-direction: column;
@@ -426,8 +426,17 @@ ion-icon {
         height: 60px;
 
     }
+    .newspaper{
+        height: 200%;
+        width: 140px;
+
+    }
+    .comics{
+        margin-top: 100px;
+    }
     .stan{
         width: 100%;
+
     }
     .box .character{
         width: 20%
@@ -439,7 +448,7 @@ ion-icon {
         padding: 0;
         justify-content: center;
     }
-    .carousel-images{
+    .carousel-images, .events-images{
         display: inline-block;
         /* flex-direction: column; */
 
