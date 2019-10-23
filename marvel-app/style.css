@@ -155,16 +155,37 @@ span.add-label{
 
 }
 
+
+
 .box .newspaper{
     margin-left: -50%;
     margin-top: 38%;
     overflow: scroll;
+}
+
+#pow{
+    margin-top: 25px;
+    animation-name: pow;
+    animation: spin .3s 10 linear;
+    animation-name: pow;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+
 }
 @keyframes spin {
         0% {transform: scale(.05);}
         100% {transform: scale(1) rotate(720deg)}
 
 }
+@keyframes pow {
+        0% {transform: scale(.5);}
+        /* 50%{transform: rotate(20deg)} */
+        /* 100% {transform:rotate(-20deg) skew(10deg) scale(1.5); } */
+        100% {transform:skew(10deg) scale(1.2); }
+
+
+}
+
 
 .sidebar{
     display: flex;
@@ -390,9 +411,7 @@ ion-icon {
     height: 25px;
 }
 
-#pow{
-    margin-top: 25px;
-}
+
 @media only screen and (max-width: 600px){
     .row{
         display: flex;
