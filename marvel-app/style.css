@@ -61,18 +61,33 @@ form{
     border: 1px solid black;
 
 }
-form h4{
-    margin-left: 25%;
+.hv h4{
+    /* margin-left: 25%; */
     font-size: 20px;
     letter-spacing: 2px;
     word-spacing: 3px;
     font-family: Marvel Regular;
     color: black;
 }
-
-form h4:hover{
-    content: "villain"
+.hv{
+    margin-left: 25%;
 }
+item{
+    width: 30px;
+}
+
+span.add-label{
+ display:none;
+
+}
+.hv:hover span.align{
+ display:none;
+}
+.hv:hover span.add-label{
+ display:block;
+}
+
+
 #submit{
     color: red;
     font-family: Marvel Regular;
