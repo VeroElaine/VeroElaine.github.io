@@ -71,7 +71,7 @@ form h4{
 }
 
 form h4:hover{
-
+    content: "villain"
 }
 #submit{
     color: red;
@@ -113,42 +113,6 @@ form h4:hover{
     /* border: 1px solid pink; */
     width: 100%;
 }
-@media only screen and (max-width: 600px){
-    .row{
-        display: flex;
-        flex-direction: column;
-        /* margin-left: 30%; */
-    }
-    .box .description{
-        margin-left: 90%;
-
-    }
-    .stan{
-        width: 100%;
-    }
-    .box .character{
-        width: 20%
-    }
-    .icons {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-    }
-    .carousel-images{
-        display: inline-block;
-        /* flex-direction: column; */
-
-    }
-    .section{
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-
-/* if screen below certain resolution, width below make column look up media Query */
 
 .box {
     width: 32%;
@@ -162,7 +126,7 @@ form h4:hover{
     background-color: ivory;
     border-radius: 5% 5% 1% 1%;
     width: 80%;
-    height: 60vh;
+    height: 40vh;
     transform-origin: center;
     animation: spin .3s 10 linear;
     padding: 10px 30px;
@@ -413,4 +377,38 @@ ion-icon {
 
 #pow{
     margin-top: 25px;
+}
+@media only screen and (max-width: 600px){
+    .row{
+        display: flex;
+        flex-direction: column;
+        /* margin-left: 30%; */
+    }
+    .box .description{
+        margin-left: 90%;
+        height: 60px;
+
+    }
+    .stan{
+        width: 100%;
+    }
+    .box .character{
+        width: 20%
+    }
+    .icons {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+    .carousel-images{
+        display: inline-block;
+        /* flex-direction: column; */
+
+    }
+    .section{
+        display: flex;
+        flex-direction: column;
+    }
 }

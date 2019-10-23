@@ -8,7 +8,8 @@ $(() => {
        url:"https://gateway.marvel.com/v1/public/characters?name="+ $userInput + "&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
    }).then(
        (data) => {
-            //console.log(data.data.results[0].name);
+           console.log(data);
+            // console.log(data.data.results[0].name);
             // console.log(data.data.results[0].urls[1].url);
             //Get comic character name
             id = (data.data.results[0].id)
@@ -51,14 +52,14 @@ $(() => {
                  $(".comicDiv").eq(0).css("display", "block");
                  $(".comicDiv").eq(1).css("display", "block");
                  $(".comicDiv").eq(2).css("display", "block");
-
+                 //defining index for click function at end of code
                  currentImageIndex = 0;
                  // console.log(currentImageIndex);
                  highestIndex = $(".comicDiv").length-1;
                 // console.log(highestIndex);
 
             })
-   console.log(id);
+   // console.log(id);
     $.ajax({
         url:"https://gateway.marvel.com/v1/public/events?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
    }).then(
@@ -103,32 +104,32 @@ $(() => {
        $("form").trigger("reset");
 
    })
-   }
+}/////////end of ajax function
    let $userInput = "thor";
-
+//call function to run thor on load
    ajaxCharacter();
     $("form").on("submit", (event) => {
 
         event.preventDefault();
 
         $userInput = $('input[type="text"]').val();
+        //empty content per each user input
         $("#image").empty();
         $(".carousel-images").empty();
-        // $("#cross-overs").empty();
         $(".events-images").empty();
 
-
+//call ajax function again but now with user input
         ajaxCharacter();
 
     //console.log($userInput);
 
 })
-
+////click global variables for comic carousel
     let currentImageIndex = 0;
     console.log($(".comicDiv"));
     let highestIndex = $(".comicDiv").length-1;
     console.log($(".next"));
-
+//comic carousel
 $(".next").on("click", () => {
 
 
@@ -165,11 +166,12 @@ $(".next").on("click", () => {
         // console.log(highestIndex);
 
     })
+    ///create gloval variable for cross-over carousel
     let currentEventIndex = 0;
     console.log($(".crossDiv"));
     let highestEventIndex = $(".crossDiv").length-1;
     console.log($(".eventsnext"));
-
+//click function for cross-over carousel
     $(".eventsNext").on("click", () => {
 
 
