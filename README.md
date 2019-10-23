@@ -42,6 +42,7 @@ A website that allows you to search for any Marvel Superhero or Villain and all 
 * I had to use and MD5 hash generator in addition to my API key to have access to Marvels API
 * The character, comic and cross-over comics each had different urls so I put multiple ajax requests to gather the API data per one search/submit event
 
+## Code Snippets
 
 ## Future Improvments
 * Add a quiz to show random hero/villain description where you guess the correct character
