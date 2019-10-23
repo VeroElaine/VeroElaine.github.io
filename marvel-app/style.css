@@ -344,7 +344,7 @@ footer{
     background: #ED1D24;
     padding-top: 0;
 }
-p{
+p {
     color: white;
     font-family: cursive;
     /* margin-left: 8px; */
@@ -386,8 +386,8 @@ p{
     color: white;
 }
 ion-icon {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 
 #pow{
