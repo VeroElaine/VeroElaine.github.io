@@ -59,25 +59,44 @@ h6{
 }
 
 form{
+    display: flex;
+    flex-direction: row;
     background-color: darkgray;
-    line-height: 40px;
-    margin-top: 0;
-    padding-left: 70%;
+    justify-content: space-around;
+    border: 1px solid black;
 
 }
+form h4{
+    margin-left: 25%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-family: Marvel Regular;
+}
 
+form h4:hover{
+
+}
 #submit{
     color: red;
     font-family: Marvel Regular;
     /* border: red; */
     border-radius: 10px;
     font-size: 15px;
+    height: 30%;
+    margin-top: 2%;
+    margin-right: 10%;
 
 }
 
 #input{
     border-radius: 20px;
     font-size: 15px;
+    height: 30%;
+    margin-top: 2%;
+    margin-left: auto;
+
+
 }
 
 
@@ -295,15 +314,14 @@ p{
     width: 100%;
     color: white
 }
-.icons h5{
-    margin-left: 3px;;
-}
 
 .icons {
     color:  white;
     display: flex;
     flex-direction: row;
-    padding-left: 50%;
+    /* padding-left: 50%; */
+    justify-content: space-between;
+    padding: 0
 
 }
 

@@ -117,6 +117,7 @@ $(() => {
         // $("#cross-overs").empty();
         $(".events-images").empty();
 
+
         ajaxCharacter();
 
     //console.log($userInput);
