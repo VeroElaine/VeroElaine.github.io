@@ -20,13 +20,6 @@ header {
     /* height: 70px; */
 }
 
-/* section{
-    margin-bottom: 0;
-    overflow: hidden;
-    padding-bottom: 0;
-} */
-
-
 h1 {
     border: 200px solid red;
     font-family: Marvel Regular;
@@ -123,8 +116,37 @@ form h4:hover{
 
 .box {
     width: 32%;
+}
+.title h4{
+    color: black;
+}
+.newspaper{
+    margin-top: 40px;
+    background-color: ivory;
+    border-radius: 5% 5% 1% 1%;
+    width: 90%;
+    height: 40%;
+    transform-origin: center;
+    animation: spin .3s 10 linear;
+    padding: 10px 30px;
+    overflow: scroll;
+    box-shadow: 2px 2px 4px black, -2px -2px 4px black;
+
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 
 }
+.box .newspaper{
+    margin-left: -50%;
+    margin-top: 38%;overflow: scroll;
+}
+@keyframes spin {
+        0% {transform: scale(.05);}
+        100% {transform: scale(1) rotate(720deg)}
+
+}
+
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -167,6 +189,7 @@ form h4:hover{
     box-shadow: 2px 2px 4px black, -2px -2px 4px black;
     margin-bottom: 30px;
     background-color: ivory;
+    border-radius: 8px;
 
 }
 
@@ -180,6 +203,7 @@ form h4:hover{
     flex-wrap: wrap;
     font-weight: bold;
     margin-left: 5px;
+
 
 }
 #comics, #events{
@@ -311,27 +335,32 @@ p{
 }
 .logo {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    margin-left: 20%;
-    margin-top: 30px;
+    margin: 0;
+    margin-top: 2%;
     width: 100%;
-    color: white
+    color: white;
+    padding-bottom: 1%;
 }
 
 .icons {
     color:  white;
     display: flex;
     flex-direction: row;
-    /* padding-left: 50%; */
-    justify-content: space-between;
-    padding: 0
+    padding: 0;
+
+}
+.icons .me{
+    margin-left: 30px;
 
 }
 
 .icons a{
     background: #ED1D24;
     color: white;
+    margin: auto;
+    padding: 0
 }
 .icons a:hover{
     background-color: #ED1D24;
@@ -339,34 +368,4 @@ p{
 }
 #pow{
     margin-top: 25px;
-}
-.title h4{
-    color: black;
-}
-.newspaper{
-    margin-top: 40px;
-    background-color: ivory;
-    border-radius: 5% 5% 1% 1%;
-    width: 90%;
-    height: 40%;
-    transform-origin: center;
-    animation: spin .3s 10 linear;
-    padding: 10px 30px;
-    overflow: scroll;
-    box-shadow: 2px 2px 4px black, -2px -2px 4px black;
-
-    animation-name: spin;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-
-}
-.box .newspaper{
-    margin-left: -50%;
-
-    margin-top: 38%;
-}
-@keyframes spin {
-        0% {transform: scale(.05);}
-        100% {transform: scale(1) rotate(720deg)}
-
 }
