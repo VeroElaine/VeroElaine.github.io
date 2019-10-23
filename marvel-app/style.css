@@ -178,7 +178,7 @@ span.add-label{
 
 }
 @keyframes pow {
-        0% {transform: scale(.5);}
+        0% {transform: scale(1);}
         /* 50%{transform: rotate(20deg)} */
         /* 100% {transform:rotate(-20deg) skew(10deg) scale(1.5); } */
         100% {transform:skew(10deg) scale(1.2); }
