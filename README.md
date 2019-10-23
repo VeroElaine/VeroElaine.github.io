@@ -10,11 +10,11 @@ A website that allows you to search for any Marvel Superhero or Villain and all 
 
 ## Technologies Used
 
-*Javascript
-*jQuery
-*HTML
-*CSS
-*API
+* Javascript
+* jQuery
+* HTML
+* CSS
+* API
 
 ## Resources
 [Marvel API]("https://developer.marvel.com/docs")
