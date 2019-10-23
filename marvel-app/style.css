@@ -59,7 +59,9 @@ h6{
 }
 
 form{
+    background-image: url("Imgs/pattern.png");
     display: flex;
+    background-size: cover;
     flex-direction: row;
     background-color: darkgray;
     justify-content: space-around;
@@ -72,6 +74,7 @@ form h4{
     letter-spacing: 2px;
     word-spacing: 3px;
     font-family: Marvel Regular;
+    color: black;
 }
 
 form h4:hover{
@@ -86,6 +89,7 @@ form h4:hover{
     height: 30%;
     margin-top: 2%;
     margin-right: 10%;
+    /* background: lightgray; */
 
 }
 
@@ -103,7 +107,7 @@ form h4:hover{
 .container{
     display: flex;
     overflow: hidden;
-    border: 1px solid gold;
+    /* border: 1px solid gold; */
     height: auto;
     width: 100%;
 }
