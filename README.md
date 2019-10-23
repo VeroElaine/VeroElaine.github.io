@@ -6,7 +6,7 @@ A website that allows you to search for any Marvel Superhero or Villain and all 
 [Veronica's Marvel-App](https://veroelaine.github.io/marvel-app/)
 
 ##
-**Veronica's Online** - [Portfolio]**("")
+**Veronica's Online** - [Portfolio]("")
 
 ## Technologies Used
 
