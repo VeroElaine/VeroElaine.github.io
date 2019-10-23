@@ -9,7 +9,7 @@ A website that allows you to search for any Marvel Superhero or Villain and all 
 **Veronica's Online** - [Portfolio]("")
 
 ## Technologies Used
-
+Markup : * Bullet list
 °Javascript
 °jQuery
 °HTML
