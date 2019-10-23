@@ -113,6 +113,42 @@ form h4:hover{
     /* border: 1px solid pink; */
     width: 100%;
 }
+@media only screen and (max-width: 600px){
+    .row{
+        display: flex;
+        flex-direction: column;
+        /* margin-left: 30%; */
+    }
+    .box .description{
+        margin-left: 90%;
+
+    }
+    .stan{
+        width: 100%;
+    }
+    .box .character{
+        width: 20%
+    }
+    .icons {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+    .carousel-images{
+        display: inline-block;
+        /* flex-direction: column; */
+
+    }
+    .section{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* if screen below certain resolution, width below make column look up media Query */
 
 .box {
     width: 32%;
@@ -120,15 +156,17 @@ form h4:hover{
 .title h4{
     color: black;
 }
+
 .newspaper{
     margin-top: 40px;
     background-color: ivory;
     border-radius: 5% 5% 1% 1%;
-    width: 90%;
-    height: 40%;
+    width: 80%;
+    height: 60vh;
     transform-origin: center;
     animation: spin .3s 10 linear;
     padding: 10px 30px;
+    /* max-height: 300px; */
     overflow: scroll;
     box-shadow: 2px 2px 4px black, -2px -2px 4px black;
 
@@ -137,9 +175,11 @@ form h4:hover{
     animation-iteration-count: 1;
 
 }
+
 .box .newspaper{
     margin-left: -50%;
-    margin-top: 38%;overflow: scroll;
+    margin-top: 38%;
+    overflow: scroll;
 }
 @keyframes spin {
         0% {transform: scale(.05);}
