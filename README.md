@@ -48,7 +48,7 @@ A website that allows you to search for any Marvel Superhero or Villain and all 
 ## Future Improvments
 * Add a quiz to show random hero/villain description where you guess the correct character
 * Add more to the quiz that gives a story summary and you guess the correct comic of the character you currently searched
-* Responsive design that changes the carousel to show three comics in column vs row so images and links are more easily readable on mobile devices
+
 
 
 
