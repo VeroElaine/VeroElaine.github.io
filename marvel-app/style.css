@@ -360,12 +360,17 @@ p{
     background: #ED1D24;
     color: white;
     margin: auto;
-    padding: 0
+    padding: 0;
 }
 .icons a:hover{
     background-color: #ED1D24;
     color: white;
 }
+ion-icon {
+    width: 30px;
+    height: 30px;
+}
+
 #pow{
     margin-top: 25px;
 }
