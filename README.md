@@ -37,6 +37,7 @@ A website that allows you to search for any Marvel Superhero or Villain and all 
 **CSS**
 * I create my newspaper animation to spin on load of page
 * I create my two crousels here
+* Hover that changes the word hero to villain, and other links to have new styles on hover
 
 **API**
 * I had to use and MD5 hash generator in addition to my API key to have access to Marvels API
