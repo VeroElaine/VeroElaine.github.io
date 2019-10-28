@@ -46,8 +46,11 @@ A website that allows you to search for any Marvel Superhero or Villain and all 
 ## Code Snippets
 
 ## Future Improvments
+* Create randomized characters to show on load of the home page
+* Add in modal if character input from user is not in the Marvel Universe 
 * Add a quiz to show random hero/villain description where you guess the correct character
 * Add more to the quiz that gives a story summary and you guess the correct comic of the character you currently searched
+* Make it responsive to mobile apps and various display sizes
 
 
 
