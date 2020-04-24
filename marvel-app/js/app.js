@@ -105,6 +105,8 @@ $(() => {
 
    })
 }/////////end of ajax function
+
+//%%%%%%%%%here make it call random character on load %%%%%%%%%%/////
    let $userInput = "thor";
 //call function to run thor on load
    ajaxCharacter();
@@ -115,6 +117,7 @@ $(() => {
         $userInput = $('input[type="text"]').val();
         //empty content per each user input
         $("#image").empty();
+        // $("#description").empty();
         $(".carousel-images").empty();
         $(".events-images").empty();
 
@@ -127,13 +130,14 @@ $(() => {
 ////click global variables for comic carousel
     let currentImageIndex = 0;
     console.log($(".comicDiv"));
-    let highestIndex = $(".comicDiv").length-1;
+    let highestIndex = $(".comicDiv").length;
     console.log($(".next"));
 //comic carousel
 $(".next").on("click", () => {
 
 
         $(".comicDiv").eq(currentImageIndex).css("display", "none");
+        $(".comicDiv").eq(currentImageIndex-1).css("display", "none");
         // $(".comicDiv").children().eq(0).css("display", "none");
         if(currentImageIndex < highestIndex) {
         currentImageIndex++;
@@ -159,9 +163,9 @@ $(".next").on("click", () => {
             currentImageIndex = highestIndex
         };
 
-        $(".comicDiv").eq(currentImageIndex -1).css("display", "block");
-        $(".comicDiv").eq(currentImageIndex).css("display", "block");
+        $(".comicDiv").eq(currentImageIndex ).css("display", "block");
         $(".comicDiv").eq(currentImageIndex+1).css("display", "block");
+        $(".comicDiv").eq(currentImageIndex+2).css("display", "block");
         // console.log(currentImageIndex);
         // console.log(highestIndex);
 
@@ -169,13 +173,14 @@ $(".next").on("click", () => {
     ///create gloval variable for cross-over carousel
     let currentEventIndex = 0;
     console.log($(".crossDiv"));
-    let highestEventIndex = $(".crossDiv").length-1;
+    let highestEventIndex = $(".crossDiv").length;
     console.log($(".eventsnext"));
 //click function for cross-over carousel
     $(".eventsNext").on("click", () => {
 
 
-            $(".crossDiv").eq(currentEventIndex).css("display", "none");
+        $(".crossDiv").eq(currentEventIndex).css("display", "none");
+        $(".crossDiv").eq(currentEventIndex-1).css("display", "none");
             // $(".comicDiv").children().eq(0).css("display", "none");
             if(currentEventIndex < highestEventIndex) {
             currentEventIndex++;
@@ -195,15 +200,15 @@ $(".next").on("click", () => {
             $(".crossDiv").eq(currentEventIndex+1).css("display", "none");
             $(".crossDiv").eq(currentEventIndex+2).css("display", "none");
 
-            if(currentImageIndex > 0){
+            if(currentEventIndex > 0){
                 currentEventIndex --;
             } else {
                 currentEventIndex = highestEventIndex
             };
 
-            $(".crossDiv").eq(currentEventIndex-1).css("display", "block");
             $(".crossDiv").eq(currentEventIndex).css("display", "block");
             $(".crossDiv").eq(currentEventIndex+1).css("display", "block");
+            $(".crossDiv").eq(currentEventIndex+2).css("display", "block");
             // console.log(currentImageIndex);
             // console.log(highestIndex);
 
