@@ -9,8 +9,6 @@ $(() => {
    }).then(
        (data) => {
            console.log(data);
-            // console.log(data.data.results[0].name);
-            // console.log(data.data.results[0].urls[1].url);
             //Get comic character name
             id = (data.data.results[0].id)
            $("#name").html(data.data.results[0].name);
