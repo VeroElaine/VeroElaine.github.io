@@ -134,14 +134,19 @@ span.add-label{
 }
 .title h4{
     color: black;
+    font-size: 18px;
+}
+
+.title dt {
+    margin-left: 42px;
 }
 
 .newspaper{
-    margin-top: 40px;
+    /* margin-top: 40px; */
     background-color: ivory;
     border-radius: 5% 5% 1% 1%;
     width: 80%;
-    height: 40vh;
+    height: 33.5vh;
     transform-origin: center;
     animation: spin .3s 10 linear;
     padding: 10px 30px;
@@ -159,7 +164,7 @@ span.add-label{
 
 .box .newspaper{
     margin-left: -50%;
-    margin-top: 38%;
+    margin-top: 32%;
     overflow: scroll;
 }
 
@@ -233,13 +238,14 @@ span.add-label{
     margin-bottom: 30px;
     background-color: ivory;
     border-radius: 8px;
+    padding: 5px;
 
 }
 
 #description{
     margin-top: 10%;
     font-family: Marvel Regular;
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: 1px;
     padding: 0;
     line-height: 25px;
@@ -415,32 +421,53 @@ ion-icon {
 }
 
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 970px){
     .row{
         display: flex;
         flex-direction: column;
         /* margin-left: 30%; */
     }
     .box .description{
-        margin-left: 90%;
+        margin-top: 20%;
+        margin-left: 50%;
         height: 60px;
 
     }
     .newspaper{
-        height: 200%;
-        width: 140px;
+        height: 300%;
+        width: 300%;
 
     }
     .comics{
         margin-top: 100px;
+        width: 50%;
     }
-    .stan{
-        width: 100%;
+    .cross-overs{
+        width: 50%;
+    }
+    .comics dt {
+        margin-top: 30%;
+    }
+    #stan{
+        /* width: 100%; */
+        display: none;
+
 
     }
-    .box .character{
-        width: 20%
+
+    .sidebar {
+        display: none;
     }
+    .box {
+        /* width: 20%; */
+        margin-left: 15%;
+    }
+
+    .box .character {
+        margin-left: 42%;
+    }
+
+
     .icons {
         display: flex;
         flex-direction: column;
