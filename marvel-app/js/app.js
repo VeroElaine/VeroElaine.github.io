@@ -16,7 +16,6 @@ $(() => {
            const $finalImage = $("<img>");
            $finalImage.attr("src", data.data.results[0].thumbnail.path +  "/portrait_uncanny." + data.data.results[0].thumbnail.extension)
            $("#image").append($finalImage)
-           //console.log(data.data.results[0].thumbnail.path + "/portrait_xlarge." + data.data.results[0].thumbnail.extension);
            //get character description
            $("#description").html(data.data.results[0].description);
            // $("#learnMore").html(data.data.results[0].urls[0].url);
@@ -25,8 +24,6 @@ $(() => {
       url: "https://gateway.marvel.com:443/v1/public/comics?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea",
   }).then(
       (data) => {
-          // console.log(data);
-            // const $comicDiv = $("<div>").addClass("comicDiv")
             for(i=0; i < data.data.results.length; i++){
 
                 const $comicDiv = $("<div>").addClass("comicDiv").attr("id", "div" + i);
@@ -57,13 +54,11 @@ $(() => {
                 // console.log(highestIndex);
 
             })
-   // console.log(id);
     $.ajax({
         url:"https://gateway.marvel.com/v1/public/events?characters="+id+"&ts=07161992&apikey=2041cbab149d8b960f5c52270af4d24f&hash=5864d380d3d5c963472ce9003cb6fdea"
    }).then(
         (data) => {
             //console.log(data.data.results[0].name);
-             // console.log(data);
              //Get comic character name
              for(i=0; i < data.data.results.length; i++){
                  const $crossDiv = $("<div>").addClass("crossDiv").attr("id", "div" + i);
@@ -168,12 +163,12 @@ $(".next").on("click", () => {
         // console.log(highestIndex);
 
     })
-    ///create gloval variable for cross-over carousel
+    ///create global variable for cross-over carousel
     let currentEventIndex = 0;
     console.log($(".crossDiv"));
     let highestEventIndex = $(".crossDiv").length;
     console.log($(".eventsnext"));
-//click function for cross-over carousel
+    //click function for cross-over carousel
     $(".eventsNext").on("click", () => {
 
 
